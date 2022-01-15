@@ -1,0 +1,42 @@
+.pictureOfTheDay {
+  height: 400px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 4px solid #5e565a;
+  margin-bottom: 20px;
+  //   background-image: url("");
+  //   background-size: cover;
+  &__image {
+    width: 20rem;
+    height: auto;
+  }
+
+  &__container {
+    font-size: 13px;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__explanation {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  &__date {
+  }
+
+  &__btn {
+    margin: 1rem;
+  }
+}
+
+.API {
+  margin: 5rem;
+}
