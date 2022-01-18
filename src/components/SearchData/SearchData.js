@@ -4,7 +4,7 @@ import "../API/API.scss";
 const api_key = process.env.REACT_APP_api_key;
 
 export default function SearchData({ setInfo }) {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState();
 
   const handleChange = (e) => {
     setDate(e.target.value);
