@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { Animated } from "react-animated-css";
 export default function Button() {
   const [like, setLike] = useState(false);
 
@@ -13,19 +14,25 @@ export default function Button() {
   return (
     <>
       {like ? (
-        <FontAwesomeIcon
-          icon={faHeartBroken}
-          onClick={toggleLike}
-          value={like}
-          className="pictureOfTheDay__btn liked"
-        />
+        <Animated
+          animationIn="rotateInUpRight"
+          animationOut="bounce"
+          isVisible={true}
+        >
+          <FontAwesomeIcon
+            icon={faHeart}
+            onClick={toggleLike}
+            className="pictureOfTheDay__btn liked"
+          />
+        </Animated>
       ) : (
-        <FontAwesomeIcon
-          icon={faHeart}
-          onClick={toggleLike}
-          value={like}
-          className="pictureOfTheDay__btn unliked"
-        />
+        <Animated animationIn="lightSpeedIn" isVisible={true}>
+          <FontAwesomeIcon
+            icon={faHeartBroken}
+            onClick={toggleLike}
+            className="pictureOfTheDay__btn unliked"
+          />
+        </Animated>
       )}
     </>
   );

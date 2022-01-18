@@ -1,8 +1,9 @@
 import "./API.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Button from "../Button/Button";
 import SearchData from "../SearchData/SearchData";
+import Button from "../Button/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
 const api_key = process.env.REACT_APP_api_key;
 
 export default function API() {
@@ -33,20 +34,26 @@ export default function API() {
   return (
     <article className="API">
       <>
+        <img src="" alt="" />
         <h1>Photo Of The Day</h1>
         {search ? (
           <SearchData setInfo={setInfo} />
         ) : (
-          <button onClick={checker}>Search For Photos</button>
+          <button className="searchButton" onClick={checker}>
+            Search For Photos
+          </button>
         )}
         {info &&
           info.map((item, i) => (
             <div className="pictureOfTheDay" key={i}>
-              <img
-                className="pictureOfTheDay__image"
-                src={item.hdurl}
-                alt="space themed"
-              />
+              <>
+                <img
+                  className="pictureOfTheDay__image"
+                  src={item.hdurl}
+                  alt="NASA"
+                />
+              </>
+
               <div className="pictureOfTheDay__container">
                 <h2 className="pictureOfTheDay__title" key={i}>
                   {item.title}

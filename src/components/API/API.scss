@@ -1,32 +1,42 @@
 .pictureOfTheDay {
-  height: 400px;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  text-decoration: none;
-  border: 4px dotted #5e565a;
-  margin-bottom: 20px;
-  //   background-image: url("");
-  //   background-size: cover;
+  margin: 2rem 0;
+  @media screen and (min-width: 900px) {
+  }
   &__image {
-    width: 20rem;
-    height: auto;
+    width: 304px;
+    height: 300px;
+    padding: 1rem;
+    &:hover {
+      transform: scale(1.1);
+      transition: 1s ease-in-out;
+    }
   }
 
   &__container {
     font-size: 13px;
+    width: 548px;
   }
 
   &__title {
     padding: 0;
     margin: 0;
+    font-size: 16px;
+
+    @media screen and (min-width: 320px) {
+      margin-left: 8rem;
+      margin-right: 8rem;
+    }
   }
 
   &__explanation {
     padding: 1rem;
     margin: 0;
+    padding-right: 8rem;
+    margin: 0;
+    padding-left: 8rem;
   }
 
   &__date {
@@ -39,18 +49,88 @@
 
 .API {
   margin: 5rem;
+  margin-top: 0;
 }
 
 .liked {
   color: red;
   transform: rotate(360deg);
-  transition: all 1s ease-in-out;
+  transition: all 1.5s ease-in-out;
   transition-duration: 0.2s, 1s;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .unliked {
   transition: all 1.5s ease;
   transition-duration: 0.2s, 1s;
   color: #5e565a;
+  font-size: 20px;
+  &:hover {
+    width: 220px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+}
+
+.search {
+  &Button {
+    margin-bottom: 4rem;
+    box-shadow: inset 0px -3px 7px 0px #29bbff;
+    background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    background-color: #2dabf9;
+    border-radius: 3px;
+    border: 1px solid #0b0e07;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 9px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+    border-radius: 1rem;
+
+    &:hover {
+      background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+      background-color: #0688fa;
+    }
+  }
+
+  &__input {
+    padding: 4px;
+    font-size: 16px;
+    border-width: 2px;
+    border-color: #cccccc;
+    background-color: #ffffff;
+    color: #000000;
+    border-style: solid;
+    border-radius: 13px;
+    box-shadow: 0px 0px 6px rgba(66, 66, 66, 0.75);
+    text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+    margin: 1rem 2rem;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    @media screen and (min-width: 320px) {
+      font-size: 1rem;
+      width: 12rem;
+    }
+  }
 }
