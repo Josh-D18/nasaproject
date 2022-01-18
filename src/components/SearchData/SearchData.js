@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import "../API/API.scss";
 const api_key = process.env.REACT_APP_api_key;
 
