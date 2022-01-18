@@ -29,7 +29,7 @@ export default function SearchData({ setInfo }) {
   return (
     <>
       <form className="search__form" onSubmit={handleSubmit}>
-        <h3>
+        <h3 className="search__text">
           Please Enter The Date In This Format: YYYY-MM-DD (Year, Month, Day)
         </h3>
         <input
