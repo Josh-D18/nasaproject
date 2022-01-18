@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SearchData from "../SearchData/SearchData";
 import Button from "../Button/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import image from "../../assets/images/nasalogo.png";
 const api_key = process.env.REACT_APP_api_key;
 
 export default function API() {
@@ -34,8 +35,10 @@ export default function API() {
   return (
     <article className="API">
       <>
-        <img src="" alt="" />
-        <h1>Photo Of The Day</h1>
+        <div className="API__containerHeading">
+          <img src={image} className="pictureOfTheDay__logo" alt="" />
+          <h1 className="API__header">Photo Of The Day</h1>
+        </div>
         {search ? (
           <SearchData setInfo={setInfo} />
         ) : (
@@ -61,7 +64,7 @@ export default function API() {
                 <p className="pictureOfTheDay__explanation">
                   {item.explanation}
                 </p>
-                <p className="pictureOfTheDay__date">{item.date}</p>
+                <p className="pictureOfTheDay__date">Date: {item.date}</p>
                 <Button />
               </div>
             </div>

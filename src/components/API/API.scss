@@ -1,14 +1,34 @@
 .pictureOfTheDay {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem 0;
-  @media screen and (min-width: 900px) {
+  background: #222222;
+  border-radius: 152px;
+  @media screen and (min-width: 320px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem 0;
+    margin-top: 0rem;
+    height: 54rem;
+    width: 28rem;
   }
+
+  @media screen and (min-width: 600px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 49rem;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-around;
+    height: 28rem;
+    width: 100%;
+  }
+
   &__image {
     width: 304px;
     height: 300px;
-    padding: 1rem;
+    padding: 2rem;
     &:hover {
       transform: scale(1.1);
       transition: 1s ease-in-out;
@@ -18,16 +38,25 @@
   &__container {
     font-size: 13px;
     width: 548px;
+    @media screen and (min-width: 600px) {
+      width: 100%;
+    }
   }
 
   &__title {
     padding: 0;
     margin: 0;
     font-size: 16px;
+    color: #f1e5e5;
+    font-size: 1.5rem;
 
     @media screen and (min-width: 320px) {
       margin-left: 8rem;
       margin-right: 8rem;
+    }
+
+    @media screen and (min-width: 600px) {
+      margin: 1.5rem 0;
     }
   }
 
@@ -35,21 +64,44 @@
     padding: 1rem;
     margin: 0;
     padding-right: 8rem;
-    margin: 0;
     padding-left: 8rem;
+    color: #f1e5e5;
+    @media screen and (min-width: 600px) {
+      padding: 0px 58px;
+    }
   }
 
   &__date {
+    color: #f1e5e5;
+    margin: 1rem;
+    font-size: 1.3rem;
   }
 
   &__btn {
     margin: 1rem;
+  }
+
+  &__logo {
+    width: 222px;
+    height: 108px;
   }
 }
 
 .API {
   margin: 5rem;
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  &__header {
+    color: #ce2020;
+  }
+  &__containerHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .liked {
@@ -63,18 +115,8 @@
 .unliked {
   transition: all 1.5s ease;
   transition-duration: 0.2s, 1s;
-  color: #5e565a;
+  color: #d14646;
   font-size: 20px;
-  &:hover {
-    width: 220px;
-    height: 30px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-  }
 }
 
 .search {
@@ -122,12 +164,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 3rem;
   }
 
   &__text {
     font-size: 1.2rem;
     margin-top: 1.5rem;
+    color: #ce2020;
     @media screen and (min-width: 320px) {
       font-size: 1rem;
       width: 12rem;
