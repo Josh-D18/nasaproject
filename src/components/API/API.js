@@ -37,13 +37,13 @@ export default function API() {
       <>
         <div className="API__containerHeading">
           <img src={image} className="pictureOfTheDay__logo" alt="" />
-          <h1 className="API__header">Photo Of The Day</h1>
+          <h1 className="API__header">Photos Of The Day</h1>
         </div>
         {search ? (
           <SearchData setInfo={setInfo} />
         ) : (
           <button className="searchButton" onClick={checker}>
-            Search For Photos
+            Search For A Photo
           </button>
         )}
         {info &&
